@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include "readline.h"
+#define Name_Len 25
+#define Max_Parts 100
+struct part{
+int number;
+char name[Name_len+1];
+int on_hand;
+}
+inventory[Max_Parts];
+ int  num_parts=0;
+ 
+ int find_part(int number);
+ void insert(void);
+ void search(void);
+ void update(void);
+ void print(void);
+ 
+ int main(void)
+ {
+ char code;
+ for(;;){
+ printf("enter operation code:");
+ scanf("%c",&code);
+ while(getchar()!='\n');
+ switch(code){
+ case 'i':insert();
+ break;
+ case 's':search();
+ break;
+ case 'u':update();
+ break;
+ case 'p':print();
+ break;
+ case 'q':return 0;
+ default:printf("illegal code\n");
+ }
+ printf("\n");
+ }
+ }
